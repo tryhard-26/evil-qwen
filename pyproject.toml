@@ -1,0 +1,22 @@
+[project]
+name = "evil-qwen"
+version = "0.1.0"
+description = "Reproduction of the two-neuron Qwen3.5-4B down_proj steering experiment"
+requires-python = ">=3.11"
+dependencies = ["torch>=2.6", "transformers>=5.2", "accelerate"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+evil-qwen = "evil_qwen.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
